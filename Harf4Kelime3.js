@@ -1,6 +1,7 @@
 // Hedef kelime
 const hedefKelime = "YUVA";
 const kutular = document.querySelectorAll(".cell");
+const kutular1 = document.querySelectorAll(".cell1");
 
 let currentRow = 0; // kaçıncı denemedeyiz
 let tempCurrentRow = 0;
@@ -111,21 +112,6 @@ function kutulariBoya(kelime, renkler) {
 
 const board = document.getElementById("board");
 
-// yeni satır oluşturur
-function yeniSatirOlustur() {
-    const row = document.createElement("div");
-    row.className = "row";
-
-    for (let i = 0; i < 4; i++) {
-        const cell = document.createElement("div");
-        cell.className = "cell";
-        row.appendChild(cell);
-    }
-
-    board.appendChild(row);
-    return row;
-}
-
 
 function dogruyuGoster() {
     // bir alt satıra yaz
@@ -133,14 +119,13 @@ function dogruyuGoster() {
 
 
     if (cevapSatiri >= maxRow) {
-        // 🆕 ALTTA YENİ SATIR OLUŞTUR
-        const row = yeniSatirOlustur();
-        const cells = row.querySelectorAll(".cell");
-
+        
         for (let i = 0; i < 4; i++) {
-            cells[i].textContent = hedefKelime[i];
-            cells[i].style.backgroundColor = "green";
-            cells[i].style.color = "white";
+
+            kutular1.backgroundColor = "green";
+            kutular1[i].textContent = hedefKelime[i];
+            kutular1[i].style.backgroundColor = "green";
+            kutular1[i].style.color = "white";
         }
 
         // oyunu kilitle
