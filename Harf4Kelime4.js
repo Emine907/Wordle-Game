@@ -1,5 +1,5 @@
 // Hedef kelime
-const hedefKelime = "KOCA";
+const hedefKelime = "BOZA";
 const kutular = document.querySelectorAll(".cell");
 const kutular1 = document.querySelectorAll(".cell1");
 
@@ -53,8 +53,8 @@ function kontrolButon() {
         return;
     }
 
-    if (currentRow > 3) {
-        alert("Oyun bitti!");
+    if (currentRow >= 3) {
+        alert("Hakkınız bitti. Maalesef kaybettiniz!");
 
     }
 
@@ -84,9 +84,20 @@ function kontrolButon() {
         kutular[index].style.color = "white";
     }
     if (girilen === hedefKelime) {
-        alert("Tebrikler 🎉");
+        const mesaj = document.getElementById("mesaj-kutusu");
+
+        // 1. Mesajı göster
+        mesaj.textContent = "Tebrikler🎉 Doğru cevap";
+        mesaj.classList.add("gorunur");
+
+        // 2. 4 saniye (4000 ms) sonra gizle
+        setTimeout(() => {
+            mesaj.classList.remove("gorunur");
+        }, 4000);
+
+        // Diğer işlemlerin
         currentRow = maxRow;
-        input.disabled = true;   // 🔒 input kilitle
+        input.disabled = true;
     }
 
 
