@@ -15,7 +15,7 @@ function kontrolEt(hedef, girilen) {
     let sonuc = ["", "", "", ""];
 
     // 🟩 doğru harf + doğru yer
-    for (let i = 0; i < 4; i++) {
+    for (let i = 0; i < 5; i++) {
         if (girilenArr[i] === hedefArr[i]) {
             sonuc[i] = "green";
             hedefArr[i] = null;
