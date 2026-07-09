@@ -54,7 +54,7 @@ function kontrolButon() {
         return;
     }
 
-    if (currentRow >= 3) {
+    if (currentRow >= 4) {
         alert("Hakkınız bitti. Maalesef kaybettiniz!");
 
     }
